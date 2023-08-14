@@ -1,12 +1,18 @@
-![Image](lock-in_analysis_440_Hz.png)
-
 Lock-in amplifier
 =================
 
 ## Example
 
-Example of a WAV file where a (strong) 440 Hz sound is present for five seconds in three periods.
+Example of a WAV file where a (strong) 440 Hz sound is present for five seconds in three periods. The integration time
+is 1 s.
 
 ![Image](lock-in_analysis_440_Hz.png)
 
-The analysis shows that the sound can be filtered out very well with a lock-in frequency of 440 Hz. Theta angle varies from period to period – which means the sound is not in phase over the three different periods.
+The analysis shows that the sound can be filtered out very well with a lock-in frequency of 440 Hz. Theta angle varies
+from period to period – which means the sound is not in phase over the three different periods.
+
+Since the signal is so strong, the integration period can be reduced. Here with 0.1 s.
+
+![Image](lock-in_analysis_440_Hz_0o1s.png)
+
+Note that theta is all over the place when the signal is not strong/detected.
