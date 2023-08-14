@@ -16,3 +16,7 @@ Since the signal is so strong, the integration period can be reduced. Here with 
 ![Image](lock-in_analysis_440_Hz_0o1s.png)
 
 Note that theta is all over the place when the signal is not strong/detected.
+
+## References
+
+https://en.wikipedia.org/wiki/Lock-in_amplifier
