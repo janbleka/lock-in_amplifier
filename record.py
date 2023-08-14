@@ -13,12 +13,12 @@ def record(file_name, record_seconds, chunk=1024, format=pyaudio.PaInt16, channe
 
     input('Ready to start recording. Press Enter.')
 
-    stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK)
+    stream = p.open(format=format, channels=channels, rate=rate, input=True, frames_per_buffer=chunk)
 
     print("* recording")
     frames = []
-    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-        data = stream.read(CHUNK)
+    for i in range(0, int(rate / chunk * record_seconds)):
+        data = stream.read(chunk)
         frames.append(data)
 
     print("* done")
@@ -27,10 +27,10 @@ def record(file_name, record_seconds, chunk=1024, format=pyaudio.PaInt16, channe
     stream.close()
     p.terminate()
 
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
-    wf.setnchannels(CHANNELS)
-    wf.setsampwidth(p.get_sample_size(FORMAT))
-    wf.setframerate(RATE)
+    wf = wave.open(file_name, 'wb')
+    wf.setnchannels(channels)
+    wf.setsampwidth(p.get_sample_size(format))
+    wf.setframerate(rate)
     wf.writeframes(b''.join(frames))
     wf.close()
 
