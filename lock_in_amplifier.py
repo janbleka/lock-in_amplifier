@@ -72,7 +72,10 @@ if __name__ == "__main__":
     parser.add_argument("--integration_time_s", type=float,
                         help='Integration time in seconds. E.g. "1.0". Default 1 s.', default=1.)
     parser.add_argument("--save_png", action='store_true', help="Save plot to PNG file if set. Otherwise show.")
+    parser.add_argument("--y_axis_max", type=float, help="Maximum of the y-axis label. To keep scaling between runs. "
+                                             "Arbitrary units.")
     args = parser.parse_args()
 
     r_list, theta_deg_list = calc_signal_strength(args.input_file_name, args.lock_in_freq, args.integration_time_s)
-    plot_filtered_signal(args.lock_in_freq, r_list, theta_deg_list, save_to_file=args.save_png)
+    plot_filtered_signal(args.lock_in_freq, r_list, theta_deg_list, save_to_file=args.save_png,
+                         r_plot_max=args.y_axis_max)
