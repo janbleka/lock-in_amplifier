@@ -8,7 +8,7 @@ RECORD_SECONDS = 20
 WAVE_OUTPUT_FILE_NAME = "output.wav"
 
 
-def record(file_name, record_seconds, chunk=1024, format=pyaudio.PaInt16, channels=1, rate=44100):
+def record(file_name, record_seconds, chunk=1024, format=pyaudio.paInt16, channels=1, rate=44100):
     p = pyaudio.PyAudio()
 
     input('Ready to start recording. Press Enter.')
